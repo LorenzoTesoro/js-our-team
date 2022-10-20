@@ -37,10 +37,17 @@ const members = [
         image:'./assets/img/barbara-ramos-graphic-designer.jpg'
     }
 ]
-
-console.log(members);
+// console.log(members);
 // MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto
    // ciclo for nell'array + console log(nome, ruolo, foto)
 
+   for(let i = 0; i < members.length; i++){
+        const member = members[i];
+        
+        for (const key in member) {
+            const value = member[key];
+            console.log(key + ' ' + value);
+        }
+   }
 // MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
  // selezionare elemento della dom (queryselector), stampare ciò che avevo nel log precedente all'interno dell'elemento che ho selezionato
