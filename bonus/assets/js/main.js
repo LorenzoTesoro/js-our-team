@@ -38,7 +38,7 @@ const members = [
     }
 ]
 
-const containerElement = document.querySelector(".container");
+const rowElement = document.querySelector(".row");
 
    for(let i = 0; i < members.length; i++){
         const member = members[i];
@@ -51,5 +51,10 @@ const containerElement = document.querySelector(".container");
                             <p class="text-center fs-5 secondary text-secondary">${member.role}</p>
                         </div>
                 </div>`
-        document.querySelector('.row').insertAdjacentHTML('beforeend', cardMarkup);
+        
+                generateMarkup(rowElement,cardMarkup);
    }
+
+function generateMarkup (domElement, markup){
+    domElement.insertAdjacentHTML('beforeend', markup);
+}
