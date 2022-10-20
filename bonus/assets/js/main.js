@@ -42,19 +42,29 @@ const rowElement = document.querySelector(".row");
 
    for(let i = 0; i < members.length; i++){
         const member = members[i];
-        const cardMarkup = `
-                <div class="col">
-                    <div class="card col">
-                        <img src="${member.image}">
-                        <div class="card-body">
-                            <h2 class="text-center">${member.name}<h2>
-                            <p class="text-center fs-5 secondary text-secondary">${member.role}</p>
-                        </div>
-                </div>`
+        const cardsMarkup = generateMarkup(member);
         
-                generateMarkup(rowElement,cardMarkup);
+        insertMarkup(rowElement, cardsMarkup);
    }
-
-function generateMarkup (domElement, markup){
+   
+// insert cards
+function insertMarkup(domElement, markup){
     domElement.insertAdjacentHTML('beforeend', markup);
+}
+
+// generate cards
+function generateMarkup(object) {
+const card =    
+    `
+    <div class="col">
+        <div class="card col">
+            <img src="${object.image}">
+            <div class="card-body">
+                <h2 class="text-center">${object.name}<h2>
+                <p class="text-center fs-5 secondary text-secondary">${object.role}</p>
+            </div>
+        </div>
+    </div>
+    `
+    return card;
 }
