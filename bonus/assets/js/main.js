@@ -54,14 +54,13 @@ function insertMarkup(domElement, markup){
 
 // generate cards
 function generateMarkup(object) {
-return  `<div class="col">
-            <div class="card col">
-                <img src="${object.image}">
-                <div class="card-body">
-                    <h2 class="text-center">${object.name}<h2>
-                    <p class="text-center fs-5 secondary text-secondary">${object.role}</p>
+    return  `<div class="col">
+                <div class="card col">
+                    <img src="${object.image}">
+                    <div class="card-body">
+                        <h2 class="text-center">${object.name}<h2>
+                        <p class="text-center fs-5 secondary text-secondary">${object.role}</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    `
+            </div>`
 }
